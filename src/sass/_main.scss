@@ -1,0 +1,288 @@
+@import "base";
+@import "reset";
+
+/* Page =================================================== */
+html { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+
+body {
+	width:100%;
+	min-width:300px;
+}
+
+#wrapper{
+    width:100%;
+    overflow:hidden;
+    margin-top:50px;
+    #wrapper-inner{
+        @include transition(transform 350ms);
+        @include transform(translateX(0));
+    }
+}
+
+.nav-open{
+    #header-main {
+        #main-nav{
+            .nav-caller{
+                @include transform(rotate(180deg));
+                .line{
+                    background-color:#555;
+                    &:first-child{
+                        @include transform(rotate(-45deg) translate3d(-4px, 1px, 0));
+                        width:15px;
+                    }
+                    &:last-child{
+                        @include transform(rotate(45deg) translate3d(-4px, -1px, 0));
+                        width:15px;
+                    }
+                }
+            }
+            .sliding-nav{
+                @include transform(translateX(0));
+            }
+        }
+    }
+    #wrapper{
+        #wrapper-inner{
+            @include transform(translateX(-100px));
+        }
+    }
+}
+
+/* Typography =================================================== */
+h1, h2, h3, h4, h5, h6 {
+    line-height:100%;
+}
+h1 {
+
+}
+h2 {
+
+}
+h3 {
+
+}
+h4 {
+
+}
+h5 {
+
+}
+h6 {
+
+}
+
+p {
+
+}
+
+a {
+    @include transition(color 150ms, background-color 150ms);
+	&:hover{ }
+	&:active{ }
+	&:visited{ }
+}
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+/* Forms =================================================== */
+form{
+    .row{
+        .field{
+            margin-bottom:15px;
+            input,
+            textarea{
+                font:inherit;
+                width:100%;
+            }
+            input[type="checkbox"],
+            input[type="radio"]{
+                width:auto;
+            }
+            textarea{
+                height:150px;
+            }
+            .field-validation-error{
+                @include border-radius(0 0 5px 5px);
+                font-size: 12px;
+                display: block;
+                font-weight: normal;
+                color:#fff;
+                background-color: #d32e2e;
+                padding: 5px 10px;
+                margin: 0 5px;
+                border: 1px solid #a53939;
+            }
+        }
+    }
+}
+
+/* Buttons =================================================== */
+button,
+[class^="button"],
+[class*=" button"]{
+    @include transition(color 150ms, background-color 150ms);
+    border:none;
+    display:inline-block;
+    text-decoration:none;
+    text-align:center;
+    line-height:100%;
+    .loading-indicator {
+        @include transform(scale(3));
+        @include transition(all 250ms);
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -9px;
+        margin-left: -12px;
+    }
+    .text {
+        @include transition(all 250ms);
+        display: block;
+    }
+    &.loading {
+        background:#ccc;
+        .text {
+            @include transform(scale(0.5));
+            opacity: 0;
+        }
+        .loading-indicator {
+            @include transform(scale(1));
+            opacity: 1;
+        }
+    }
+}
+
+/* Tables =================================================== */
+
+/* Layout =================================================== */
+.container{
+	width: 100%;
+    max-width:1200px;
+	position: relative;
+	zoom:1;
+    margin:0 auto;
+}
+
+[class^="column"],
+[class*=" column"]{
+    width:100%;
+    display: inline;
+	float: left;
+	padding-left: 15px;
+	padding-right: 15px;
+    margin-bottom:30px;
+    &.pad{
+        padding-top:15px;
+        padding-bottom:15px;
+    }
+	&.nopad{
+		padding-left: 0;
+		padding-right: 0;
+	}
+    &.nomar{
+        margin-bottom:0;
+    }
+}
+.column-s-2-1{
+    width:50%;
+}
+.column-s-3-1{
+    width:33.333%;
+}
+.column-s-3-2{
+    width:66.666%;
+}
+
+.left {
+    float: left;
+    margin: 0 10px 10px 0;
+}
+.right {
+    float: right;
+    margin: 0 0 10px 10px;
+}
+.centre{
+    text-align:center;
+}
+
+/* Header =================================================== */
+#header-main {
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:20;
+    width:100%;
+	.logo{
+        float:left;
+	}
+	#main-nav{
+        float:right;
+        .nav-caller{
+            @include transition(all 250ms);
+            position:relative;
+            z-index:2;
+            display:block;
+            padding: 10px;
+            margin-right:2px;
+            text-decoration:none;
+            .line{
+                @include transition(all 250ms);
+                display:block;
+                width:22px;
+                height:3px;
+                background:#555;
+                margin:5px 0;
+            }
+            &:hover{
+                .line{
+                    background:#555;
+                }
+            }
+        }
+		.sliding-nav {
+            @include transform(translateX(100%));
+            @include transition(transform 350ms);
+            background:#222;
+            overflow:hidden;
+            height:100vh;
+            width:100vw;
+            margin:0;
+            padding:0;
+            position:absolute;
+            top:100%;
+            right:0;
+            li {
+				a {
+                    display:block;
+                    padding:15px;
+                    text-decoration:none;
+                    border-bottom:1px solid #555;
+                    color:#fff;
+                    &:hover{
+                    }
+				}
+                &.on{
+                    a{
+                    }
+                }
+            }
+        }
+	}
+}
+
+/* Main =================================================== */
+#main{
+    @include clearfix;
+}
+
+/* Footer =================================================== */
+#footer-main {
+    
+}
+
+/* Pages =================================================== */

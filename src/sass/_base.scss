@@ -1,0 +1,154 @@
+/* Fonts */
+
+/* Variables */
+
+/* Mixins */
+@mixin hide-text{
+    overflow:hidden;
+    text-indent:-900em;
+    display:block;
+}
+
+@mixin floated-list{
+    margin:0;
+	padding:0;
+	li{
+		padding:0;
+		list-style:none;
+		float:left;
+	}
+}
+
+@mixin clearfix{
+	zoom: 1;
+	&:before, &:after { 
+		content: '.'; 
+		display: block; 
+		overflow: hidden; 
+		visibility: hidden; 
+		font-size: 0; 
+		line-height: 0; 
+		width: 0; height: 0; 
+	} 
+	&:after{ 
+		clear: both; 
+	}
+}
+
+/* Helpers */
+@mixin display-flex{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin flex($flex){
+    -webkit-box-flex: $flex;
+    -webkit-flex: $flex;
+        -ms-flex: $flex;
+            flex: $flex;        
+}
+
+@mixin flex-flow($direction, $wrap) { 
+    -webkit-flex-flow: $direction $wrap;
+            flex-flow: $direction $wrap;
+}
+
+@mixin justify-content($value) {
+    -webkit-justify-content: $value;
+            justify-content: $value;
+}
+
+@mixin align-content($value) {
+    -webkit-align-content: $value;
+            align-content: $value;
+}
+
+@mixin align-items($value) {
+    -webkit-align-items: $value;
+            align-items: $value;
+}
+
+@mixin border-radius($radius) {
+    border-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin box-shadow($shadow) {
+    -webkit-box-shadow: $shadow;
+            box-shadow: $shadow;
+}
+
+@mixin transform($transform) {
+    -webkit-transform: $transform;
+        -ms-transform: $transform;
+            transform: $transform;
+}
+
+@mixin transform3d($transform, $perspective: 300px) {
+    -webkit-perspective: $perspective;
+        -ms-perspective: $perspective;
+            perspective: $perspective;
+    
+    -webkit-transform: $transform;
+        -ms-transform: $transform;
+            transform: $transform;
+
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+}
+
+@mixin transition($transition...){
+	-webkit-transition: $transition;
+            transition: $transition; 
+}
+
+@mixin text-shadow($shadow){
+    text-shadow: $shadow;
+}
+
+@mixin columns($count: 2, $gap: 15px){
+    -webkit-column-count: $count;  
+       -moz-column-count: $count;     
+            column-count: $count;          
+
+    -webkit-column-gap: $gap;
+       -moz-column-gap: $gap;
+            column-gap: $gap;
+}
+
+@mixin linear-gradient($from, $to, $isHorizontal: 0){
+    $start: top;
+    $end: bottom;
+    @if $isHorizontal == 1 {
+        $start: left;
+        $end: right;
+    } 
+
+    background: $from;
+    background: -moz-linear-gradient($start,  $from 0%, $to 100%);
+    background: -webkit-linear-gradient($start,  $from 0%,$to 100%);
+    background: linear-gradient(to $end,  $from 0%,$to 100%);
+}
+
+@mixin animation($animation) {
+  -webkit-animation: $animation;
+          animation: $animation;
+}
+
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} { @content }
+	@keyframes #{$name} { @content }
+}
+
+@mixin vendor-prefix($name, $value, $prefix-value: 0) {
+	@each $vendor in ('-webkit-', '-moz-', '-ms-', '') {
+		@if $prefix-value == 1 {
+			#{$vendor}#{$name}: #{$vendor}#{$value};
+		}
+		@else {
+			#{$vendor}#{$name}: #{$value};
+		}
+	}	
+}

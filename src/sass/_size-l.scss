@@ -1,0 +1,93 @@
+@media only screen and (min-width: 980px), screen and (min-device-width: 681px) and (max-device-width: 980px) and (min-aspect-ratio: 13/9) {
+    /* Page =================================================== */    
+
+    /* Typography =================================================== */
+
+    /* Forms =================================================== */
+    form{
+        .row{
+            &.two-field{
+                .field{
+                    width:50%;
+                    float:left;
+                    padding-left:10px;
+                    &:first-child{
+                        padding-left:0;
+                        padding-right:10px;
+                    }
+                }
+            }
+        }
+    }
+
+    /* Buttons =================================================== */
+
+    /* Tables =================================================== */
+
+    /* Layout =================================================== */
+    .column-l-1-1{
+        width: 100.0%;
+    }
+    .column-l-2-1{
+        width: 50.0%;
+    }
+    .column-l-3-1{
+        width: 33.333%;
+    }
+    .column-l-3-2{
+        width: 66.666%;
+    }
+    .column-l-4-1{
+        width: 25.0%;
+    }
+    .column-l-4-3{
+        width: 75.0%;
+    }
+    .column-l-5-2{
+        width: 40.0%;
+    }
+    .column-l-5-3{
+        width: 60.0%;
+    }
+    .column-l-6-1{
+        width: 16.666%;
+    }
+
+    /* Header =================================================== */
+    #header-main{
+        #main-nav{
+            .nav-caller{
+                display:none;
+            }
+            .sliding-nav{
+                @include transform(none);
+                @include display-flex;
+                @include justify-content(space-between);
+                position: relative;
+                right: 0;
+                max-width: none;
+                height: auto;
+                width:auto;
+                background:none;
+                border:none;
+                li {
+                    @include display-flex;
+                    a{
+                        border-bottom:none;
+                        color:#222;
+                    }
+                    &.on{
+                        a{
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* Main =================================================== */
+
+    /* Footer =================================================== */
+
+    /* Pages =================================================== */
+}
