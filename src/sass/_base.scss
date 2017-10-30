@@ -36,6 +36,38 @@
 }
 
 /* Helpers */
+@mixin display-grid {
+    display: -ms-grid;
+    display: grid;
+}
+
+@mixin display-inline-grid {
+    display: -ms-inline-grid;
+    display: inline-grid;
+}
+
+//use 'fr' for fraction widths
+//for equal columns you can use repeat(3, 1fr)
+@mixin grid-layout($columns, $rows, $gutter: 0){
+    -ms-grid-columns: $columns;
+    grid-template-columns: $columns;
+    -ms-grid-rows: $rows;
+    grid-template-rows: $rows;
+    grid-gap: $gutter;
+}
+
+//start and end are the grid lines, so for an item that starts at 1 and spans one section use 1 / 2
+//for an item that starts at 3 and spans three sections use 3 / 6
+@mixin grid-item-row-span($start, $end) {
+    -ms-grid-row-span: ($end - $start);
+    grid-row: $start / $end;
+}
+
+@mixin grid-item-column-span($start, $end) {
+    -ms-grid-column-span: ($end - $start);
+    grid-column: $start / $end;
+}
+
 @mixin display-flex{
     display: -webkit-box;
     display: -ms-flexbox;
