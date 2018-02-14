@@ -12,7 +12,7 @@ gulp.task('scripts', function() {
   gulp.src('./scripts/**/*.js')
     .pipe(concat('scripts.js'))
     .pipe(gulp.dest('./js/'))
-    .pipe(uglify())
+    .pipe(uglify().on('error', console.log))
     .pipe(gulp.dest('./js/'))
 });
 
