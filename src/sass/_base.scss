@@ -48,6 +48,9 @@
 
 //use 'fr' for fraction widths
 //for equal columns you can use repeat(3, 1fr)
+//you can name the lines instead of using numbers e.g. grid-template-rows: [header-start] 20vh [header-end]
+//lines can have multiple names, split with a space e.g. [header-end main-start]
+//When specifying the grid-row or grid-column you can then use the name instead of the number e.g. grid-column: header-start / header-end;
 @mixin grid-layout($columns, $rows, $gutter: 0){
     -ms-grid-columns: $columns;
     grid-template-columns: $columns;
