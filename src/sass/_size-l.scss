@@ -60,9 +60,9 @@
                 display:none;
             }
             .sliding-nav{
-                @include transform(none);
-                @include display-flex;
-                @include justify-content(space-between);
+                transform: none;
+                display:flex;
+                justify-content: space-between;
                 position: relative;
                 right: 0;
                 max-width: none;
@@ -71,7 +71,7 @@
                 background:none;
                 border:none;
                 li {
-                    @include display-flex;
+                    display:flex;
                     a{
                         border-bottom:none;
                         color:#222;
