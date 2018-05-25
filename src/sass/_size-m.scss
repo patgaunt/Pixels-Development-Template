@@ -3,7 +3,7 @@
     .nav-open{
         #wrapper{
             #wrapper-inner{
-                @include transform(none);
+                transform: none;
             }
         }
     }
