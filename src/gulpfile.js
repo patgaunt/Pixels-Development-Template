@@ -6,6 +6,7 @@ var nunjucks = require('gulp-nunjucks-render');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var svgSymbols = require("gulp-svg-symbols");
+var autoprefixer  = require("gulp-autoprefixer");
 
 
 gulp.task('scripts', function() {
@@ -19,6 +20,10 @@ gulp.task('scripts', function() {
 gulp.task('sass', function () {
     return gulp.src('./sass/*.scss')
         .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
         .pipe(gulp.dest('./css'));
 });
 
