@@ -31,10 +31,10 @@
                     margin-bottom:0;
                 }
                 td {
-                    @include display-flex;
+                    display:flex;
                     background:#fff;
                     &:before {
-                        @include flex(0 0 40%);
+                        flex:0 0 40%;
                         content: attr(data-label);
                         background: #f7f7f7;
                         padding: 10px;
