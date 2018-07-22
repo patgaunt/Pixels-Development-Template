@@ -2,7 +2,7 @@
 npm init
 
 *Install Gulp and plugins to the project*
-npm install gulp gulp-sass gulp-concat gulp-uglify gulp-nunjucks-render gulp-svg-symbols gulp-autoprefixer --save-dev
+npm install gulp gulp-sass gulp-concat gulp-uglify gulp-nunjucks-render gulp-svg-symbols gulp-autoprefixer browser-sync
 
 *Watch files*
-gulp automate (runs the automate task)
+gulp (runs the serve task)
