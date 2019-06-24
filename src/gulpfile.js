@@ -22,7 +22,6 @@ gulp.task('sass', function () {
     return gulp.src('./sass/**/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
             cascade: false
         }))
         .pipe(gulp.dest('./css'))
@@ -46,7 +45,7 @@ gulp.task('sprites', function () {
         .pipe(gulp.dest("./img"));
 });
 
-gulp.task('serve', ['scripts', 'sass', 'nunjucks', 'sprites'], function () {
+gulp.task('serve', gulp.parallel('scripts', 'sass', 'nunjucks', 'sprites'), function () {
     browserSync.init({
         server: "./"
     });
@@ -54,4 +53,4 @@ gulp.task('serve', ['scripts', 'sass', 'nunjucks', 'sprites'], function () {
     gulp.watch("./*.html").on('change', browserSync.reload);
 });
  
-gulp.task('default', ['serve']);
+gulp.task('default', gulp.parallel('serve'));
