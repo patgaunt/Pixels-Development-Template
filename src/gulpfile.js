@@ -45,12 +45,12 @@ gulp.task('sprites', function () {
         .pipe(gulp.dest("./img"));
 });
 
-gulp.task('serve', gulp.parallel('scripts', 'sass', 'nunjucks', 'sprites'), function () {
+gulp.task('serve', function () {
     browserSync.init({
         server: "./"
     });
-    gulp.watch(['./sass/*.scss', './scripts/**/*.js', 'pages/**/*.njk'], ['sass', 'scripts', 'nunjucks']);
+    gulp.watch(['./sass/*.scss', './scripts/**/*.js', 'pages/**/*.njk'], gulp.series('sass', 'scripts', 'nunjucks'));
     gulp.watch("./*.html").on('change', browserSync.reload);
 });
  
-gulp.task('default', gulp.parallel('serve'));
+gulp.task('default', gulp.series('scripts', 'sass', 'nunjucks', 'sprites', 'serve'));
