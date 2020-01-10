@@ -1,89 +1,97 @@
-@media only screen and (min-width: 980px), screen and (min-device-width: 681px) and (max-device-width: 980px) and (min-aspect-ratio: 13/9) {
+@media only screen and (min-width: 980px) {
     /* Page =================================================== */    
 
     /* Typography =================================================== */
 
     /* Forms =================================================== */
-    form{
-        .row{
-            &.two-field{
-                .field{
-                    width:50%;
-                    float:left;
-                    padding-left:10px;
-                    &:first-child{
-                        padding-left:0;
-                        padding-right:10px;
-                    }
-                }
-            }
-        }
-    }
-
+    
     /* Buttons =================================================== */
 
     /* Tables =================================================== */
 
     /* Layout =================================================== */
-    .column-l-1-1{
-        width: 100.0%;
-    }
-    .column-l-2-1{
-        width: 50.0%;
-    }
-    .column-l-3-1{
-        width: 33.333%;
-    }
-    .column-l-3-2{
-        width: 66.666%;
-    }
-    .column-l-4-1{
-        width: 25.0%;
-    }
-    .column-l-4-3{
-        width: 75.0%;
-    }
-    .column-l-5-2{
-        width: 40.0%;
-    }
-    .column-l-5-3{
-        width: 60.0%;
-    }
-    .column-l-6-1{
-        width: 16.666%;
+    .column {
+      &--l-1-1 { flex-basis: 100.0%; max-width: 100.0%; }
+      &--l-2-1 { flex-basis: 50.0%; max-width: 50.0%; }
+      &--l-3-1 { flex-basis: 33.333%; max-width: 33.333%; }
+      &--l-3-2 { flex-basis: 66.666%; max-width: 66.666%; }
+      &--l-4-1 { flex-basis: 25.0%; max-width: 25.0%; }
+      &--l-4-3 { flex-basis: 75.0%; max-width: 75.0%; }
+      &--l-5-2 { flex-basis: 40.0%; max-width: 40.0%; }
+      &--l-5-3 { flex-basis: 60.0%; max-width: 60.0%; }
+      &--l-6-1 { flex-basis: 16.666%; max-width: 16.666%; }
+      
+      &--l-align-l { justify-content: flex-start; }
+      &--l-align-c { justify-content: center; }
+      &--l-align-r { justify-content: flex-end; }
+
+      &--l-valign-t { align-items: flex-start; }
+      &--l-valign-c { align-items: center; }
+      &--l-valign-b { align-items: flex-end; }
     }
 
-    /* Header =================================================== */
-    #header-main{
-        #main-nav{
-            .nav-caller{
-                display:none;
-            }
-            .sliding-nav{
-                transform: none;
-                display:flex;
-                justify-content: space-between;
-                position: relative;
-                right: 0;
-                max-width: none;
-                height: auto;
-                width:auto;
-                background:none;
-                border:none;
-                li {
-                    display:flex;
-                    a{
-                        border-bottom:none;
-                        color:#222;
-                    }
-                    &.on{
-                        a{
-                        }
-                    }
-                }
-            }
-        }
+    /* Helpers =================================================== */
+    .text {
+      &--l-align-l { text-align: left; }
+      &--l-align-c { text-align: center; }
+      &--l-align-r { text-align: right; }
     }
+
+    .pad {
+      &--l-0 { padding: 0em; }
+      &--l-0-5 { padding: $gutter / 2; }
+      &--l-1 { padding: $gutter; }
+      &--l-2 { padding: $gutter * 2; }
+      
+      &--l-t-0 { padding-top: 0em; }
+      &--l-t-0-5 { padding-top: $gutter / 2; }
+      &--l-t-1 { padding-top: $gutter; }
+      &--l-t-2 { padding-top: $gutter * 2; }
+    
+      &--l-r-0 { padding-right: 0; }
+      &--l-r-1 { padding-right: $gutter; }
+      &--l-r-0-5 { padding-right: $gutter / 2; }
+      &--l-r-2 { padding-right: $gutter * 2; }
+    
+      &--l-b-0 { padding-bottom: 0; }
+      &--l-b-1 { padding-bottom: $gutter; }
+      &--l-b-0-5 { padding-bottom: $gutter / 2; }
+      &--l-b-2 { padding-bottom: $gutter * 2; }
+      
+      &--l-l-0 { padding-left: 0; }
+      &--l-l-1 { padding-left: $gutter; }
+      &--l-l-0-5 { padding-left: $gutter / 2; }
+      &--l-l-2 { padding-left: $gutter * 2; }
+    }
+    
+    .mar {
+      &--l-0 { margin: 0; }
+      &--l-0-5 { margin: $gutter / 2; }
+      &--l-1 { margin: $gutter; }
+      &--l-2 { margin: $gutter * 2; }
+      
+      &--l-t-0 { margin-top: 0; }
+      &--l-t-0-5 { margin-top: $gutter / 2; }
+      &--l-t-1 { margin-top: $gutter; }
+      &--l-t-2 { margin-top: $gutter * 2; }
+    
+      &--l-r-0 { margin-right: 0; }
+      &--l-r-0-5 { margin-right: $gutter / 2; }
+      &--l-r-1 { margin-right: $gutter; }
+      &--l-r-2 { margin-right: $gutter * 2; }
+    
+      &--l-b-0 { margin-bottom: 0; }
+      &--l-b-0-5 { margin-bottom: $gutter / 2; }
+      &--l-b-1 { margin-bottom: $gutter; }
+      &--l-b-2 { margin-bottom: $gutter * 2; }
+    
+      &--l-l-0 { margin-left: 0; }
+      &--l-l-0-5 { margin-left: $gutter / 2; }
+      &--l-l-1 { margin-left: $gutter; }
+      &--l-l-2 { margin-left: $gutter * 2; }
+    }
+      
+    /* Header =================================================== */
 
     /* Main =================================================== */
 

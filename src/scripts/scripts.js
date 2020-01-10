@@ -14,7 +14,7 @@ var App = (function ($) {
         });
 
         $('body').on('click', function (e) {
-            if (!$(e.target).parents('#main-nav').length) {
+            if (!$(e.target).parents('#header__nav').length) {
                 $('body').removeClass('nav-open');
             }
         });

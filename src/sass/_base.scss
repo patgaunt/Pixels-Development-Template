@@ -1,6 +1,20 @@
 /* Fonts */
 
 /* Variables */
+$gutter: 1em;
+
+$text: #333;
+
+$primary: #556BB0;
+$secondary: #CB2D50;
+
+$error: #D0011B;
+$warning: #FFD400;
+$success: #61D001;
+$info: #4D95E9;
+
+$bg-grey: #F7F7F5;
+$border-grey: #C4C4C0;
 
 /* Mixins */
 @mixin hide-text{

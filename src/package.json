@@ -1,28 +1,27 @@
 {
-    "name": "pixels-development-template",
-    "version": "1.0.0",
-    "description": "",
-    "main": "gulpfile.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-      "browser-sync": "^2.26.7",
-      "gulp": "^4.0.2",
-      "gulp-autoprefixer": "^6.1.0",
-      "gulp-concat": "^2.6.1",
-      "gulp-nunjucks-render": "^2.2.3",
-      "gulp-sass": "^4.0.2",
-      "gulp-svg-symbols": "^3.2.3",
-      "gulp-uglify": "^3.0.2"
-    },
-    "browserslist": [
-        "last 2 versions",
-        "> 1%",
-        "maintained node versions",
-        "not dead"
-    ]
-  }
-  
+  "name": "giffords-circus",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-nunjucks-render": "^2.2.3",
+    "gulp-sass": "^4.0.2",
+    "gulp-svg-symbols": "^3.2.3",
+    "gulp-uglify": "^3.0.2"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 1%",
+    "maintained node versions",
+    "not dead"
+  ],
+  "description": ""
+}
